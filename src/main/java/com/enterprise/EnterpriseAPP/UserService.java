@@ -1,12 +1,13 @@
 package com.enterprise.EnterpriseAPP;
 // Loose coupling , as the database can be anything !!!
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
     Database database ;
-    public UserService(Database database) {
+    public UserService( @Qualifier("mySQLDatabase")Database database) {
        this.database = database ;
     }
 
